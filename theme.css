@@ -9,8 +9,8 @@
 
 :root {
     /* Brand colors */
-    --color-primary: #4a7a6e;       /* deep teal-green: headers, nav, links */
-    --color-primary-dark: #35594f;  /* darker teal: hover/active states */
+    --color-primary: #35594f;       /* deep teal-green: headers, nav, links */
+    --color-primary-dark: #042910;  /* darker teal: hover/active states */
     --color-accent: #e0a66a;        /* warm orange: cards, highlights */
     --color-accent-dark: #c98a49;   /* darker orange: hover states */
 
