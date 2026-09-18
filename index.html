@@ -38,10 +38,9 @@
                         formatted = formatted.substring(0,i) + "," + formatted.substring(i,formatted.length);
                     }
                     document.getElementById("age").innerHTML = formatted;
-                } update(); 
-                setInterval(update, 1000); 
+                } update();
                 setInterval(
-                    () => {document.getElementById("age").style = "font-size: " + String(1 - 0.05 * Math.pow(Math.sin((Date.now() - timestamp) * (1/2) * (2 * Math.PI)/ 1000),10)) + "em;";}
+                    () => {update(); document.getElementById("age").style = "font-size: " + String(1 - 0.05 * Math.pow(Math.sin(-1.9 + (Date.now() - timestamp) * (1/2) * (2 * Math.PI)/ 1000),10)) + "em;";}
                     ,10
                 );
 

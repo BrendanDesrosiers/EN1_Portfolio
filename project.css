@@ -27,6 +27,18 @@ body {
     border-radius: var(--radius);
 }
 
+input {
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    border-color: white;
+}
+
+video {
+    border-radius: 3%;
+    border-color: black;
+}
+
 .header .name {
     text-align: left;
     font-size: 1.5em;
