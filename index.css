@@ -56,9 +56,9 @@ body {
     color: var(--color-text-on-dark);
 }
 
-.home-content {
+/* .home-content {
     max-width: 600px;
-}
+} */
 
 .home-content h1 {
     position: relative;

@@ -25,8 +25,49 @@
     <!-- Introduction Section -->
     <section class="home" style="background:url(./images/background.jpeg) no-repeat; background-size: cover; background-position: center;">
         <div class="home-content">
-            <h1>Hi, I'm Brendan Desrosiers</h1>
-            <p>About Me: Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, voluptabus. Id numquam, maiores obcaecati architecto voluptas voluptate, facere iusto asperiores accusamus dignissimos quibusdam voluptates, exercitationem reprehenderit eaque.</p>
+            <h1 id="name">Hi, I'm </h1>
+            <p>About Me: I'm a first-year mechanical engineering student studying physics at Tufts University. I am <span id="age"></span> seconds old.</p>
+            <script>
+                // grab second for math stuffs
+                const timestamp = Math.round(Date.now() / 1000) * 1000;
+
+                // do age related stuff
+                function update() {
+                    document.getElementById("age").innerHTML = Math.round((Date.now() - 1781155020000)/1000);
+                } update(); 
+                setInterval(update, 1000); 
+                setInterval(
+                    () => {document.getElementById("age").style = "font-size: " + String(1 - 0.05 * Math.pow(Math.sin((Date.now() - timestamp) * (1/2) * (2 * Math.PI)/ 1000),10)) + "em;";}
+                    ,10
+                );
+
+                // do name related stuff
+                // add a bunch of spans after the intro in "name" to do some fancy text stuff
+                let name = "Brendan Desrosiers";
+                let parent = document.getElementById("name");
+                for (let i = 0; i < name.length; i++) {
+                    let letter = document.createElement("span");
+                    letter.innerHTML = name[i];
+                    parent.appendChild(letter);
+                }
+
+                // make letters change size
+                // create a cursor that moves down that pushes nearby letters up
+                setInterval(
+                    () => {
+                        let cursor = (Date.now() - timestamp)*5/1000 % (name.length + 30); // position from 0 to name.length then wait 10 letter times
+                        for (let i = 0; i < parent.children.length; i++) {
+                            let scale = 0;
+                            let distance = Math.abs(cursor - (i + 5));
+                            if (distance < 3) {
+                                scale = 1 + Math.cos((cursor - (i + 5)) * Math.PI / 3);
+                                // scale = 1;
+                            }
+                            parent.children[i].style = "font-size: " + String(1 - 1 / 4 * scale) + "em;";
+                        }
+                    }
+                    , 10);
+            </script>
 
             <!-- Replace these hrefs with your own LinkedIn/GitHub URLs -->
             <div class="socials">
@@ -51,7 +92,7 @@
             <a href="./activity01.html" class="project-link">
                 <h2 class="project-title">Activity 1: Design a Coaster</h2>
                 <p class="project-desc">Use Generative AI to design a drink coaster for a client.</p>
-                <img src="./images/activity01.png" class="project-img">
+                <img src="images/coaster.png" class="project-img">
             </a>
         </article>
 
@@ -60,7 +101,7 @@
             <a href="./activity02.html" class="project-link">
                 <h2 class="project-title">Activity 2: Object Redesign</h2>
                 <p class="project-desc">Create a totally new design!</p>
-                <img src="./images/activity02.png" class="project-img">
+                <img src="images/fire_fly_bulb.png" class="project-img">
             </a>
         </article>
 
@@ -69,7 +110,7 @@
             <a href="./project01.html" class="project-link">
                 <h2 class="project-title">Project 1: Getting to Know You</h2>
                 <p class="project-desc">Here is a LEGO Build all about me...</p>
-                <img src="./images/project01.png" class="project-img">
+                <img src="images/lego_drawer.jpeg" class="project-img">
             </a>
         </article>
 
@@ -78,7 +119,7 @@
             <a href="./project02.html" class="project-link">
                 <h2 class="project-title">Project 2: Silly Walks</h2>
                 <p class="project-desc">Design a Silly Walks Robot</p>
-                <img src="./images/project02.png" class="project-img">
+                <img src="images/silly_walker.jpeg" class="project-img">
             </a>
         </article>
 
@@ -87,7 +128,7 @@
             <a href="./project03.html" class="project-link">
                 <h2 class="project-title">Project 3: Biomimicry</h2>
                 <p class="project-desc">Bio-Inspired Structure/Function Analysis</p>
-                <img src="./images/project03.png" class="project-img">
+                <img src="images/lego_shark.jpeg" class="project-img">
             </a>
         </article>
 
@@ -96,7 +137,7 @@
             <a href="./activity03.html" class="project-link">
                 <h2 class="project-title">Activity 3: Paper Airplane</h2>
                 <p class="project-desc">Using Generative AI to design a Paper Airplane</p>
-                <img src="./images/activity03.png" class="project-img">
+                <img src="images/paper_airplane.jpeg" class="project-img">
             </a>
         </article>
 
