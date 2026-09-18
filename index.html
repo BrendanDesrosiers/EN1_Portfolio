@@ -30,10 +30,14 @@
             <script>
                 // grab second for math stuffs
                 const timestamp = Math.round(Date.now() / 1000) * 1000;
-
                 // do age related stuff
                 function update() {
-                    document.getElementById("age").innerHTML = Math.round((Date.now() - 1781155020000)/1000);
+                    let age = Math.round((Date.now() - 1213204620000)/1000); // my age in second
+                    let formatted = String(age);
+                    for (let i = formatted.length - 3; i > 0; i -= 3) {
+                        formatted = formatted.substring(0,i) + "," + formatted.substring(i,formatted.length);
+                    }
+                    document.getElementById("age").innerHTML = formatted;
                 } update(); 
                 setInterval(update, 1000); 
                 setInterval(
