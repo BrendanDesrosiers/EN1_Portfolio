@@ -17,7 +17,7 @@ for (let i = 0; i < name.length; i++) {
 // create a cursor that moves down that pushes nearby letters up
 setInterval(
     () => {
-        let cursor = (Date.now() - timestamp)*5/1000 % (name.length + 30); // position from 0 to name.length then wait 10 letter times
+        let cursor = (Date.now() - timestamp)*5/1000 % (name.length * 3); // position from 0 to name.length then wait 10 letter times
         for (let i = 0; i < parent.children.length; i++) {
             let scale = 0;
             let distance = Math.abs(cursor - (i + 5));
@@ -25,7 +25,8 @@ setInterval(
                 scale = 1 + Math.cos((cursor - (i + 5)) * Math.PI / 3);
                 // scale = 1;
             }
-            parent.children[i].style = "font-size: " + String(1 - 1 / 4 * scale) + "em;";
+            parent.children[i].style = "font-size: " + String(1 - 1 / 4 * scale) + "em;" + 
+                                       "color: hsl(" + ((3 * i + 50 * Date.now()/1000)%360) + ",100%,50%);";
         }
     }
     , 10);
