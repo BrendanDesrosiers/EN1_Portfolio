@@ -25,11 +25,9 @@
     <!-- Introduction Section -->
     <section class="home" style="background:url(./images/background.jpeg) no-repeat; background-size: cover; background-position: center;">
         <div class="home-content">
-            <h1 id="name">Hi, I'm </h1>
+            <h1>Hi, I'm <span id="fancy-name">Brendan Desrosiers</span></h1>
             <p>About Me: I'm a first-year mechanical engineering student studying physics at Tufts University. I am <span id="age"></span> seconds old.</p>
             <script>
-                // grab second for math stuffs
-                const timestamp = Math.round(Date.now() / 1000) * 1000;
                 // do age related stuff
                 function update() {
                     let age = Math.round((Date.now() - 1213204620000)/1000); // my age in second
@@ -43,33 +41,6 @@
                     () => {update(); document.getElementById("age").style = "font-size: " + String(1 - 0.05 * Math.pow(Math.sin(-1.9 + (Date.now() - timestamp) * (1/2) * (2 * Math.PI)/ 1000),10)) + "em;";}
                     ,10
                 );
-
-                // do name related stuff
-                // add a bunch of spans after the intro in "name" to do some fancy text stuff
-                let name = "Brendan Desrosiers";
-                let parent = document.getElementById("name");
-                for (let i = 0; i < name.length; i++) {
-                    let letter = document.createElement("span");
-                    letter.innerHTML = name[i];
-                    parent.appendChild(letter);
-                }
-
-                // make letters change size
-                // create a cursor that moves down that pushes nearby letters up
-                setInterval(
-                    () => {
-                        let cursor = (Date.now() - timestamp)*5/1000 % (name.length + 30); // position from 0 to name.length then wait 10 letter times
-                        for (let i = 0; i < parent.children.length; i++) {
-                            let scale = 0;
-                            let distance = Math.abs(cursor - (i + 5));
-                            if (distance < 3) {
-                                scale = 1 + Math.cos((cursor - (i + 5)) * Math.PI / 3);
-                                // scale = 1;
-                            }
-                            parent.children[i].style = "font-size: " + String(1 - 1 / 4 * scale) + "em;";
-                        }
-                    }
-                    , 10);
             </script>
 
             <!-- Replace these hrefs with your own LinkedIn/GitHub URLs -->
@@ -154,6 +125,6 @@
         </article>
 
     </section>
-    
+    <script src="main.js"></script>
 </body>
 </html>
