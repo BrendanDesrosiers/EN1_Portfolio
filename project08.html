@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project 8: Haunted House</title>
+    <link rel="stylesheet" href="./project.css">
+</head>
+<body>
+
+    <!-- Header and Navigation Section -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="./index.html" class="active">Home</a>
+        </nav>
+    </header>
+
+    <!-- Project Information -->
+    <div class="proj-container">
+
+        <h1 class='proj-header'>Project Portfolio</h1>
+        <div class="proj-img-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/yph_k2dsEyE?si=7-jC2vVKHdf4KqC4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <h2 class='proj-header'>Project 8: Haunted House</h2>
+        
+        <div class="proj-desc">
+            <p>
+                For this project, we were tasked with creating spooky mechanisms for a haunted house. My group (composed of myself, Timothy Ngo, and Parviz Sohibnazarov) iterated through many different ideas and designs until we eventually settled on something that worked.
+                <br>
+                <br>
+                
+            </p>
+        </div>
+        
+        <div class="proj-img-container">
+            <img src="images/skelly.jpeg" width="50%">
+            <p>Here, you can see the initial idea was completely different from what we landed on. Starting off, we thought we would make a skeleton that would write on a whiteboard like an insane person, using a system of pulleys to reach designated locations. However, we quickly discovered it would be a tricky challenge to try and accurately set the location of each pully since the string would slip. We decided to try other ideas for the sake of completing the project on time. We experimented with different ideas of luring someone to put their hand into a box to get some "free candy", but to be grabbed by a skeleton hand. We tried some different options using a scissor mechanism and a rotating arm with a flap that would open, but we found the simplest solution was to just mount the arm to the end of a couple motors and make the interior of the box so dark, you could not see it until it reached out.</p>
+            <img src="images/halloween_box.png" width="50%">
+            <p>The code for this project was exceptionally straightforward: we simply waited for the distance sensor to detect something within 100mm. When it did, the motors would run at full speed in a 90 degree arc, then reset.</p>
+            <img src="images/halloween_box_code.png" width="50%">
+        </div>
+    </div>
+    <!-- End Project Information -->
+
+</body>
+</html>
